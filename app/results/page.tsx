@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
 
@@ -29,7 +29,7 @@ function formatWhatsAppNumber(number: string) {
   return cleaned
 }
 
-export default function ResultsPage() {
+function ResultsContent() {
   const searchParams = useSearchParams()
   const area = searchParams.get('area') || 'George'
   const trade = searchParams.get('trade') || ''
@@ -70,27 +70,27 @@ export default function ResultsPage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 px-6 py-8 text-slate-900">
       <div className="mx-auto max-w-md">
         <header className="mb-6">
-          <a href="/search" className="text-sm text-slate-500">
+          <a href="/search" className="text-sm text-white">
             ← Back to Search
           </a>
 
-          <h1 className="mt-4 text-3xl font-bold">
+          <h1 className="mt-4 text-3xl font-bold text-white">
             {trade ? `${trade} in ${area}` : `Tradespeople in ${area}`}
           </h1>
 
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-slate-100">
             Contact a local tradesperson directly by phone or WhatsApp.
           </p>
         </header>
 
         {loading && (
-          <div className="rounded-2xl bg-white p-5 text-center text-slate-600 shadow-sm ring-1 ring-slate-100">
+          <div className="rounded-2xl bg-white p-5 text-center text-slate-600 shadow-md">
             Loading tradespeople...
           </div>
         )}
 
         {!loading && tradespeople.length === 0 && (
-          <div className="rounded-2xl bg-white p-5 text-center shadow-sm ring-1 ring-slate-100">
+          <div className="rounded-2xl bg-white p-5 text-center shadow-md">
             <p className="font-semibold">No tradespeople found.</p>
             <p className="mt-2 text-sm text-slate-600">
               Try another trade, or check back once more people have joined.
@@ -101,30 +101,23 @@ export default function ResultsPage() {
         <div className="space-y-4">
           {!loading &&
             tradespeople.map((person) => (
-              <div
-                key={person.id}
-                className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100"
-              >
+              <div key={person.id} className="rounded-2xl bg-white p-5 shadow-md">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <h2 className="text-xl font-semibold">{person.name}</h2>
-
                     <p className="text-xs text-slate-400">Recently added</p>
-
                     <p className="mt-1 text-sm text-slate-600">
                       {person.trade} • {person.area}
                     </p>
                   </div>
 
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                  <span className="rounded-full bg-yellow-100 px-3 py-1 text-xs font-bold text-yellow-800">
                     Local
                   </span>
                 </div>
 
                 {person.description && (
-                  <p className="mt-3 text-sm text-slate-700">
-                    {person.description}
-                  </p>
+                  <p className="mt-3 text-sm text-slate-700">{person.description}</p>
                 )}
 
                 <p className="mt-2 text-xs text-slate-500">
@@ -152,5 +145,13 @@ export default function ResultsPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ResultsContent />
+    </Suspense>
   )
 }
