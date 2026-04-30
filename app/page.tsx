@@ -1,65 +1,97 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 px-6 py-8 text-slate-900">
+      
+      {/* Subtle workshop texture overlay */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          opacity: 0.12,
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
+          backgroundSize: '22px 22px',
+        }}
+      />
+
+      <div className="relative mx-auto flex min-h-[90vh] max-w-md flex-col justify-between">
+        <section>
+          <header className="mb-8">
+            <div className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-bold text-white">
+              TradeConnect
+            </div>
+
+            <p className="mt-3 text-sm font-medium text-slate-600">
+              Reliable local trades. One tap away.
+            </p>
+          </header>
+
+          <div className="rounded-2xl bg-white p-4 shadow-md">
+            <div
+              className="mb-4 inline-flex rounded-full px-3 py-1 text-xs font-bold"
+              style={{ backgroundColor: '#fef3c7', color: '#92400e' }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Built for local jobs
+            </div>
+
+            <h1 className="text-4xl font-black leading-tight tracking-tight">
+              Find trusted local tradespeople near you
+            </h1>
+
+            <p className="mt-4 text-lg text-slate-600">
+              Find plumbers, electricians, builders, roofers and general labourers near you.
+            </p>
+
+            <div className="mt-6 rounded-2xl bg-slate-100 p-4">
+              <label className="mb-2 block text-sm font-bold text-slate-700">
+                Select your area
+              </label>
+
+              <select className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-4 text-lg font-medium">
+                <option>George</option>
+              </select>
+            </div>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/search"
+              className="mt-6 block w-full rounded-2xl bg-slate-900 px-5 py-4 text-center text-lg font-bold text-white"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+              Find a Tradesperson
+            </a>
+          </div>
+
+          <div className="mt-6 rounded-3xl bg-slate-900 p-5 text-white shadow-sm">
+            <p className="text-sm font-bold" style={{ color: '#fbbf24' }}>
+              Are you a tradesperson?
+            </p>
+
+            <a
+              href="/join"
+              className="mt-3 block w-full rounded-2xl px-5 py-4 text-center text-lg font-bold"
+              style={{ backgroundColor: '#fbbf24', color: '#111827' }}
+            >
+              Join & List Your Services
+            </a>
+
+            <a
+              href="/dashboard"
+              className="mt-3 block w-full rounded-2xl border border-slate-600 px-5 py-4 text-center text-lg font-bold text-white"
+            >
+              Go to Tradesperson Dashboard
+            </a>
+          </div>
+        </section>
+
+        <footer className="mt-8 grid grid-cols-1 gap-3 text-sm font-medium text-slate-700">
+          <div className="rounded-2xl bg-white p-4 shadow-md">
+            Skilled local tradespeople
+          </div>
+          <div className="rounded-2xl bg-white p-4 shadow-md">
+            Easy contact via WhatsApp
+          </div>
+          <div className="rounded-2xl bg-white p-4 shadow-md">
+            Simple quotes & invoices
+          </div>
+        </footer>
+      </div>
+    </main>
+  )
 }
