@@ -50,11 +50,37 @@ export default function DashboardPage() {
         </section>
 
         <section className="mt-6 rounded-3xl bg-slate-900 p-5 text-white shadow-sm">
+          <p className="text-sm font-bold" style={{ color: "#fbbf24" }}>
+            Grow your trade business online
+          </p>
+
+          <h2 className="mt-2 text-2xl font-bold leading-tight">
+            Need a simple website and business email?
+          </h2>
+
+          <p className="mt-3 text-sm leading-6 text-slate-200">
+            Give your customers a professional place to find you online, view
+            your services, and contact you directly. Ideal for tradespeople who
+            want an affordable website and branded email address.
+          </p>
+
+          <a
+            href="https://cheap-as-chips.co.za"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 block w-full rounded-2xl px-5 py-4 text-center text-lg font-bold"
+            style={{ backgroundColor: "#fbbf24", color: "#111827" }}
+          >
+            View Website & Email Packages
+          </a>
+        </section>
+
+        <section className="mt-6 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
           <h2 className="text-lg font-semibold">
             Tip
           </h2>
 
-          <p className="mt-2 text-sm text-slate-200">
+          <p className="mt-2 text-sm text-slate-600">
             You can come back to this dashboard anytime from the home page.
           </p>
         </section>
