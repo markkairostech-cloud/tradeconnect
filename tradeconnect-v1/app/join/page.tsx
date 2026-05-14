@@ -4,7 +4,7 @@ export default function JoinPage() {
       <div className="mx-auto max-w-md">
         <header className="mb-8">
           <a href="/" className="text-sm text-slate-500">← Back</a>
-          <h1 className="mt-4 text-3xl font-bold">Join TradeConnect</h1>
+          <h1 className="mt-4 text-3xl font-bold">Join fix-worx</h1>
           <p className="mt-2 text-slate-600">Get more local jobs. Let customers find and contact you.</p>
         </header>
 

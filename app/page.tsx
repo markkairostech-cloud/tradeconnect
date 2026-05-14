@@ -1,13 +1,13 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 px-6 py-8 text-slate-900">
-      
       {/* Subtle workshop texture overlay */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           opacity: 0.12,
-          backgroundImage: 'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
           backgroundSize: '22px 22px',
         }}
       />
@@ -16,11 +16,11 @@ export default function Home() {
         <section>
           <header className="mb-8">
             <div className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-bold text-white">
-              TradeConnect
+              Fix-Worx
             </div>
 
             <p className="mt-3 text-sm font-medium text-slate-600">
-              Reliable local trades. One tap away.
+              Trusted local workmanship near you.
             </p>
           </header>
 

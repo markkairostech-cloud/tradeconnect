@@ -4,7 +4,7 @@ export default function DashboardPage() {
       <div className="mx-auto max-w-md">
         <header className="mb-10">
           <a href="/" className="text-sm text-slate-500">← Home</a>
-          <h1 className="mt-4 text-3xl font-bold">TradeConnect</h1>
+          <h1 className="mt-4 text-3xl font-bold">fix-worx</h1>
           <p className="mt-2 text-slate-600">Create simple quotes and invoices from your phone.</p>
         </header>
 

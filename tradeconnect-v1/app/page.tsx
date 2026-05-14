@@ -4,7 +4,7 @@ export default function Home() {
       <div className="mx-auto flex min-h-[90vh] max-w-md flex-col justify-between">
         <section>
           <header className="mb-12">
-            <div className="text-2xl font-bold tracking-tight">TradeConnect</div>
+            <div className="text-2xl font-bold tracking-tight">fix-worx</div>
             <div className="mt-1 text-sm text-slate-500">Local skills. Simple contact.</div>
           </header>
 
