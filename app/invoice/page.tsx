@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { supabase } from '../../lib/supabaseClients'
+import { supabase } from '../../lib/supabaseClient'
 
 type PaymentType = 'deposit' | 'full'
 
