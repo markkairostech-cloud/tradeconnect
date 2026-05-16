@@ -61,7 +61,7 @@ export default function DashboardPage() {
           <p className="mt-3 text-sm leading-6 text-slate-200">
             Give your customers a professional place to find you online, view
             your services, and contact you directly. Ideal for tradespeople who
-            want an affordable website and branded email address. Priced perfectly for the small businessman
+            want an affordable website and branded email address. Priced perfectly for the small businessperson
           </p>
 
           <a
